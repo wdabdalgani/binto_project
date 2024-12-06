@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+* {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+ 
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #E1C9EE;
+    background-image: url("images/wwwd.png");
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+/* ========= ReUSABLE elements ======== */
+.btn {
+    color: white;
+    border: none;
+    height: 40px;
+    width: 80px;
+    border-radius: 7px;
+    background-color: rgb(227, 58, 114);
+    font-size: 1.1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #879bf5;
+    border: 1px dashed rgb(168, 42, 84);
+    animation: wiggle 1.5s infinite;
+}
+
+
+/* ==========  the introduction page ========== */
+#introduction-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#intro-page-btn {
+    width: 150px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+#introduction-page h1 {
+    font-size: 5.5rem;
+}
+
+#flying-bee {
+    width: 200px;
+    position: absolute;
+    top: 15%;
+    -webkit-animation: wiggle 1s infinite;
+}
+.flying-bee {
+    width: 35px;
+    position: absolute;
+}
+
+
+
+
+/* ========  Name Page ======== */
+#name-page {
+    font-family: 'Dosis', serif;
+    font-weight: 600;
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 10%;
+}
+
+#name-page input {
+    font-family: 'Dosis', serif;
+    width: 300px;
+    height: 80px;
+    font-size: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    background-color:#266063;
+    color: white;
+    margin-bottom: 25px;
+}
+
+#name-page input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+*:focus {
+    outline: none;
+}
+
+#name-page h1 {
+    font-size: 3.5rem;
+}
+
+
+
+
+
+/* ======== Avatar Page ====== */
+#avatar-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-profile-select {
+    color: #e3e3e4;
+}
+
+#user-profile-select h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#user-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+
+#avatar-page ul {
+    width: 600px;
+    max-width: 90vw;
+    height: 120px;
+    display: flex;
+    overflow-x: scroll;
+    margin: 15px 0;
+    padding: 0;
+    border-radius: 75px;
+}
+
+#avatar-page li {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+}
+
+#avatar-page li img {
+    width: 100px;
+    transition: 0.4s all;
+    border-radius: 50%;
+}
+
+#avatar-page li img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#avatar-page li img:active {
+    box-shadow: 0 0 3px 5px white;
+    transition: 0.1s;
+}
+
+
+/* hide the radio buttons */
+#avatar-page [type=radio] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+#avatar-page [type=radio]:checked + img {
+    outline: 4px solid white;
+    transform: scale(1.1);
+}
+
+
+.back-btn {
+    color:rgb(101, 21, 48);
+    background-color: #E1C9EE;
+}
+
+/* Instructions Page */
+#instructions {
+    width: 500px;
+    max-width: 98vw;
+    height: 400px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(252, 253, 255);
+    border-radius: 25px;
+    background-color: #014e53;
+    color: white;
+    z-index: 0;
+}
+
+#instructions-next {
+    margin-top: 15px;
+}
+
+.instructions img {
+    width: 200px;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+ /* ======== the game page ========= */
+#game-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#game-page>div {
+    height: 33%;
+}
+
+
+
+.dropzone {
+    background-color: rgb(227, 58, 114);
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px;
+    width: 80%;
+    transition: background-color 0.3s;
+}
+
+.drop-active {
+    border-color: rgb(101, 21, 48);
+}
+
+.drop-target {
+    background-color: rgb(242, 51, 114);
+    border-color: rgb(242, 51, 114);
+    border-style: solid;
+}
+
+.start-letters {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.drop-area-div, .start-letters, .picture-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.drag-drop {
+    display: inline-block;
+    color: #fff;
+    background-color: #002e31;
+    touch-action: none;
+    transform: translate(0px, 0px);
+    width: 90px;
+    border: 1px solid white;
+    height: 90px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin: 15px;
+    transition: background-color 0.3s;
+}
+
+/* .drag-drop.can-drop {
+color: #000;
+background-color: #90be6d;
+} */
+
+
+
+.drop-here {
+    display: flex;
+    z-index: -1;
+}
+
+.letter-zone {
+    margin-left: 15px;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    color: transparent;
+}
+
+.correct-bg {
+    background-color: #266063;
+}
+
+.incorrect-bg {
+    background-color: rgb(255, 89, 89);
+}
+
+
+
+
+
+#animated-pic {
+    position: absolute;
+    width: 150px;
+    /* animation: moveUpNDown 3s infinite ease-in-out; */
+}
+
+@keyframes moveUpNDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+.congrats-page {
+    width: 300px;
+    /* display: none; */
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(227, 58, 114);
+    background-color: #266063;
+    border-radius: 8px;
+    color: #E1C9EE;
+    position: absolute;
+}
+
+.scores {
+    display: flex;
+}
+
+.scores h3 {
+    margin-left: 15px;
+}
+
+#next-word {
+    width: 100px;
+    margin: 15px;
+    animation: wiggle 1.5s infinite;
+}
+
+
+@keyframes wiggle {
+    1% {transform: rotate(-2deg)}
+    4% {transform: rotate(5deg)}
+    6% {transform: rotate(-2deg)}
+    8% {transform: rotate(2deg)}
+    10% {transform: rotate(-2deg)}
+    12% {transform: rotate(2deg)}
+    14% {transform: rotate(-2deg)}
+    16% {transform: rotate(2deg)}
+    18% {transform: rotate(-5deg)}
+    20% {transform: rotate(2deg)}
+    22% {transform: rotate(-2deg)}
+    24% {transform: rotate(2deg)}
+    26% {transform: rotate(0deg)}
+}
+
+
+
+
+/* ============ Player Profile Stuff ========== */
+.background-fade {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+}
+
+#player-profile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+    flex-direction: column;
+    z-index: 10;
+    background-color: rgb(235, 116, 251);
+    height: 100vh;
+    transition: 0.1s all linear;;
+
+    /* change this back */
+    width: 0;
+    overflow: hidden;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+}
+
+#closePPBtn {
+    z-index: 1;
+    position: absolute;
+    font-size: 4.5rem;
+    color: #5443ee;
+    top: -1rem;
+    left: 1rem;
+    margin: 0;
+}
+
+#closePPBtn:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+#small-player-pic {
+    display: relative;
+    position: fixed;
+    width: 75px;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+}
+
+#medium-player-pic {
+    border-radius: 50%;
+    width: 200px;
+    margin-left: calc(50% - 100px);
+    cursor:pointer
+}
+
+#medium-player-pic:hover {
+    outline: 2px solid white;
+}
+
+#small-player-pic:hover {
+    cursor: pointer;
+}
+
+#stars-ul, #super-stars-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#stars-ul {
+    font-size: 1.5rem;
+    color: gold;
+}
+
+#super-stars-ul {
+    font-size: 3rem;
+    color: #266063;
+}
+#super-stars-ul li {
+    margin-right: 0.2rem;
+}
+
+#word-list {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#word-list>li {
+    padding-left: 10px;
+}
+
+/* this is added on profile update */
+.new-name-textbox {
+    width: 70%;
+    height: fit-content;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.about-me-textbox {
+    width: 100%;
+    height: calc(1em * 1.5 * 6);
+    background-color: white;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+#about-me-div>div {
+    display: flex;
+    align-items: center;
+}
+
+#about-me-btn {
+    border: none;
+    margin-left: 15px;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    border-radius: 15px;
+    transition: 0.2s all;
+    cursor: pointer;
+} 
+#about-me-btn:hover {
+    color: white;
+    background-color: #5443ee;
+}
+
+
+
+
+
+/* ------ hide stuff here ------ */
+/* #name-page
+#avatar-page
+#game-page
+#instructions */
+
+#avatar-page, .congrats-page, #instructions, #game-page, #name-page, #small-player-pic {
+    display: none;
+}
+
+
+
+
+
+.invisible {
+    opacity: 0;
+    transition: all 0.8s;
+}
+.visible {
+    opacity: 1;
+    transition: all 0.8s;
+}
+
+
+
+
+
+
+
+
+
+
+/* ======== CONFETTI! ======= */
+.confetti{
+    z-index: -10;
+    position: absolute;
+    height: 5px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    /* border: 1px solid #ddd; */
+    /* user-select: none; */
+ }
+
+
+ 
+ /* basic media queries */
+ @media screen and (max-width: 600px) {
+     #introduction-page {
+         text-align: center;
+     }
+
+     #game-page svg {
+         display: none;
+     }
+
+     .drop-area-div {
+         margin-top: 25%;
+     }
+
+ }
+ #intro1 {
+    color: rgb(255, 255, 255);
+    font-size: 2.4rem;
+    font-family: revert-layer;
+  }
+  #intro {
+    color: aliceblue;
+    font-size: 16px;
+    font-family: revert-layer;
+  }
+  #avatar-page {
+    direction: rtl;
+  }
+  #player-profile{
+    direction:rtl;
+  }
